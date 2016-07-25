@@ -1,8 +1,8 @@
 package com.vlad9pa.game.sprite;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -15,7 +15,12 @@ public class Maslina extends Item {
     private Rectangle Bound;
     private Vector2 Pos;
 
-    public Maslina(float x,float y) {
+    public void push() {
+        Pos.y = MathUtils.random(64,256);
+        Pos.x = MathUtils.random(0,128);
+    }
+
+    public Maslina(float x, float y) {
         Img = new Texture("maslina.png");
         Pos = new Vector2(x,y);
         Bound = new Rectangle(Pos.x, Pos.y, Img.getWidth(), Img.getHeight());

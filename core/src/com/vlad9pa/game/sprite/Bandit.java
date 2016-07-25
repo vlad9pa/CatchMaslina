@@ -1,7 +1,6 @@
 package com.vlad9pa.game.sprite;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
@@ -16,26 +15,20 @@ public class Bandit extends Item{
     private Texture img;
     private Vector2 pos;
     private Rectangle bound;
-    private Sound sound;
 
     public Bandit(float x,float y) {
-        img = new Texture("bandit.png");
+        img = new Texture("bandit_n.png");
         pos = new Vector2(x,y);
         bound = new Rectangle(x,y,img.getWidth(),img.getHeight());
-        sound = Gdx.audio.newSound(Gdx.files.internal("maslina.mp3"));
+
     }
 
     public void catchOlive(){
         counter++;
     }
 
-    public void catchMaslina(){
-        sound.play();
-    }
-
     public void dispose(){
         img.dispose();
-        sound.dispose();
     }
 
     public Texture getImg() {
@@ -56,9 +49,6 @@ public class Bandit extends Item{
         return pos;
     }
 
-    public Sound getSound() {
-        return sound;
-    }
 
     public Rectangle getBound() {
         return bound;

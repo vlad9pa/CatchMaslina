@@ -12,8 +12,8 @@ import com.vlad9pa.game.state.MenuState;
 
 public class catchMaslina extends ApplicationAdapter {
 
-	public static final int WIDTH = 800;
-	public static final int HEIGHT = 480;
+	public static final int WIDTH = 128;
+	public static final int HEIGHT = 64;
 	public static final String TITLE = "CatchMaslina";
 
 	private GameStateManager gsm;

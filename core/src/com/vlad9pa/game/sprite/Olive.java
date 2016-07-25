@@ -1,9 +1,8 @@
 package com.vlad9pa.game.sprite;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -16,8 +15,8 @@ public class Olive extends Item{
     private Vector2 Pos;
 
     public Olive(float x,float y) {
-        Img = new Texture("olivka.png");
-        Pos = new Vector2(x,800);
+        Img = new Texture("olive.png");
+        Pos = new Vector2(x,y);
         Bound = new Rectangle(Pos.x, Pos.y, Img.getWidth(), Img.getHeight());
     }
 
@@ -31,6 +30,11 @@ public class Olive extends Item{
     @Override
     public boolean collide(Rectangle player) {
         return Bound.overlaps(player) ? true : false;
+    }
+
+    public void push(){
+        Pos.y = MathUtils.random(64,128);
+        Pos.x = MathUtils.random(0,128);
     }
 
     @Override
