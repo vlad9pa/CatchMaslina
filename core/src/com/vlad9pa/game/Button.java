@@ -35,7 +35,7 @@ public class Button {
 
     public boolean buttonDown(double x, double y){
         if(Gdx.input.isTouched() && (x > position.x - image.getWidth()/2
-                && x < position.x + image.getWidth()
+                && x < position.x + image.getWidth()/2
         && (y > position.y - image.getHeight()/2 && y < position.y + image.getHeight()/2))){
 
             image = button_pressed;

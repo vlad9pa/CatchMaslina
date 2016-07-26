@@ -17,9 +17,6 @@ public class MenuState extends State {
     private OrthographicCamera camera;
     private double wC,hC;
 
-    private float elapsedTime;
-    private long actionBeginTime;
-
     public MenuState(GameStateManager gsm) {
         super(gsm);
 
@@ -41,7 +38,7 @@ public class MenuState extends State {
 
     @Override
     protected void handleInput() {
-        button.buttonDown(Gdx.input.getX()*wC,Gdx.input.getY()*wC);
+        button.buttonDown(Gdx.input.getX()*wC,Gdx.input.getY()*hC);
         if(button.buttonUp()){
             gsm.set(new playState(gsm));
         }
