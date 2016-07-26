@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.vlad9pa.game.catchMaslina;
 import com.vlad9pa.game.sprite.Bandit;
 import com.vlad9pa.game.sprite.Maslina;
 import com.vlad9pa.game.sprite.Olive;
@@ -61,16 +62,17 @@ public class playState extends State {
                 //doing nothing ;)
             }
             else if (Gdx.input.getX()*screenCoef  > bandit.getPos().x) {
-                bandit.move(+30);
+                bandit.move(+35);
             }
             else if(Gdx.input.getX()*screenCoef < bandit.getPos().x ){
-                bandit.move(-30);
+                bandit.move(-35);
             }
         }
     }
 
     @Override
     public void update(float dt) {
+        screenCoef = 128.0/Gdx.graphics.getWidth();
         handleInput();
         for(int i =0; i < maslins.length-1; i++){
             maslins[i].move(35);

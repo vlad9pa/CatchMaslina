@@ -27,7 +27,7 @@ public class GameOverState extends State {
     @Override
     protected void handleInput() {
         if(Gdx.input.justTouched()){
-            gsm.set(new playState(gsm));
+            gsm.set(new MenuState(gsm));
         }
     }
 
